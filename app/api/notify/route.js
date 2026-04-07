@@ -1,4 +1,6 @@
-import { createClient } from '@supabase/supabase-js'export async function POST(req) {
+import { createClient } from '@supabase/supabase-js'
+
+export async function POST(req) {
   try {
     const { shiftId, type } = await req.json()
     console.log('notify受信 shiftId:', shiftId, 'type:', type)
@@ -8,7 +10,6 @@ import { createClient } from '@supabase/supabase-js'export async function POST(r
       process.env.SUPABASE_SERVICE_ROLE_KEY
     )
     console.log('Supabase URL:', process.env.NEXT_PUBLIC_SUPABASE_URL ? 'あり' : 'なし')
-    console.log('SERVICE_ROLE_KEY:', process.env.SUPABASE_SERVICE_ROLE_KEY ? 'あり' : 'なし')
     console.log('LINE TOKEN:', process.env.LINE_CHANNEL_ACCESS_TOKEN ? 'あり' : 'なし')
     console.log('APP URL:', process.env.NEXT_PUBLIC_APP_URL)
 
